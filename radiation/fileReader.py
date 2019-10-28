@@ -183,34 +183,6 @@ def load_data_samples(files):
     :return: iterable that contains the data, the label and the identifier of the sample.
     """
 
-    # previous json loader
-    '''
-    for filename in files:
-        with open(filename) as f:
-            id = 0
-            for line in f:
-                id += 1
-                try:
-                    input = json.loads(line)
-                    # todo normalize the input
-                    data = []
-                    label = []
-
-                    data.append((input['co2']))
-                    data.append((input['surface_temperature']))
-                    for i in range(0, len(input['radiation'])):
-                        data.append((input['air_temperature'][i]))
-                        data.append((input['humidity'][i]))
-                        label.append((input['radiation'][i]))
-
-                    # fill last 2 values with 0
-                    for _ in range(0, 196 - 194):
-                        data.append(0.0)
-
-                    yield data, label, [id]
-                except ValueError:
-                    print('Value error in file {} and line {}'.format(filename, id))
-    '''
 
     for filename in files:
 
